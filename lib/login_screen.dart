@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:uvix_flutter/second_screen.dart';
+import 'package:uvix_flutter/forgot_password.dart';
+import 'package:uvix_flutter/master_salon_screen.dart';
 
 class loginScreen extends StatelessWidget {
   const loginScreen({Key key}) : super(key: key);
@@ -7,6 +8,8 @@ class loginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
+      // backgroundColor: Colors.grey[100],
       body: SafeArea(
         child: Column(
           children: <Widget>[
@@ -59,40 +62,37 @@ class loginScreen extends StatelessWidget {
                       "Вы мастер салона красоты? Авторизируйтесь",
                       textDirection: TextDirection.ltr,
                       textAlign: TextAlign.center,
-                      textScaleFactor: 1.0,
+                      textScaleFactor: 1.02,
                     )),
                 Container(
-                  padding: const EdgeInsets.only(top: 16),
+                    padding: const EdgeInsets.only(top: 16),
                     child: TextButton(
-                  style: TextButton.styleFrom(foregroundColor: Colors.black),
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => SecondScreen()));
-                  },
-                  child: const Text(
-                    "Здесь",
-                    textDirection: TextDirection.ltr,
-                    textScaleFactor: 1.0,
-                  ),
-                )),
+                      style:
+                          TextButton.styleFrom(foregroundColor: Colors.black),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MasterSalonScreen()));
+                      },
+                      child: const Text(
+                        "Здесь",
+                        textDirection: TextDirection.ltr,
+                        textScaleFactor: 1.02,
+                        style: TextStyle(decoration: TextDecoration.underline),
+                      ),
+                    )),
               ],
             ),
             Row(
               children: <Widget>[
-                const Padding(padding: EdgeInsets.only(top: 150)),
+                const Padding(padding: EdgeInsets.only(top: 160)),
                 Container(
                   padding: const EdgeInsets.only(left: 16),
                   height: 40,
                   width: 160,
                   child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => SecondScreen()));
-                      },
+                      onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.black,
                         shape: RoundedRectangleBorder(
@@ -108,12 +108,7 @@ class loginScreen extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 50),
                   child: TextButton(
                     style: TextButton.styleFrom(foregroundColor: Colors.black),
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => SecondScreen()));
-                    },
+                    onPressed: () {},
                     child: const Text(
                       "Регистрация",
                       textDirection: TextDirection.ltr,
@@ -122,15 +117,31 @@ class loginScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+
               ],
             ),
             Container(
                 padding: const EdgeInsets.only(left: 16),
                 alignment: Alignment.centerLeft,
-                child: const Text(
-                  " Забыли пароль?",
-                  textScaleFactor: 1.1,
+                child: TextButton(
+                  style: TextButton.styleFrom(foregroundColor: Colors.black),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => forgotPassword()));
+                  },
+                  child: const Text(
+                    "Забыли пароль?",
+                    textDirection: TextDirection.ltr,
+                    textScaleFactor: 1.0,
+                  ),
                 )),
+            Container(
+              height: 103,
+              alignment: Alignment.centerRight,
+              child: Image.asset('assets/images/eplipse.png'),
+            ),
             // Container(
             //     alignment: Alignment.bottomRight,
             //     height: 144,

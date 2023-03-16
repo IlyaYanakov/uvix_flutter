@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uvix_flutter/login_screen.dart';
-import 'package:uvix_flutter/second_screen.dart';
+import 'package:uvix_flutter/master_salon_screen.dart';
 
 void main() {
   runApp(myHomePage());
@@ -8,7 +8,10 @@ void main() {
 
 class myHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
-    return  const MaterialApp(
+    return   MaterialApp(
+      theme: ThemeData(fontFamily: ''
+      ),
+
         debugShowCheckedModeBanner: false,
         home: loginScreen()
     );

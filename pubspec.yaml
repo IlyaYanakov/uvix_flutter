@@ -54,6 +54,7 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
+    - assets/images/eplipse.png
     - assets/images/arrow.png
     - assets/images/uvix_icon.png
     - assets/images/yellow.png
@@ -71,9 +72,10 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-     - family: sfpro
+     - family: SFProDisplay-LightItalic
        fonts:
-         - asset: fonts/sfProBold.ttf
+         - weight: 400
+         - asset: fonts/SFProDisplay-LightItalic.ttf
 
 
   #
