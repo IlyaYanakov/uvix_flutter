@@ -9,7 +9,7 @@ class loginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      // backgroundColor: Colors.grey[100],
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
           children: <Widget>[
@@ -129,7 +129,7 @@ class loginScreen extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => forgotPassword()));
+                            builder: (context) => const forgotPassword()));
                   },
                   child: const Text(
                     "Забыли пароль?",

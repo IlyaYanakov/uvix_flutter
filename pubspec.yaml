@@ -58,6 +58,7 @@ flutter:
     - assets/images/arrow.png
     - assets/images/uvix_icon.png
     - assets/images/yellow.png
+    - assets/images/successful.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

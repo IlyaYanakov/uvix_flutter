@@ -63,15 +63,12 @@ class MasterSalonScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(13))),
                 ),
               ),
-
               const Padding(padding: EdgeInsets.only(top: 110)),
               SizedBox(
                   width: 160,
                   height: 40,
                   child: ElevatedButton(
-                      onPressed: () {
-
-                      },
+                      onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.black,
                         shape: RoundedRectangleBorder(
@@ -83,10 +80,16 @@ class MasterSalonScreen extends StatelessWidget {
                             fontSize: 22,
                           )))),
             ]),
-            Container(
-              alignment: Alignment.centerRight,
-              height: 208,
-              child: Image.asset('assets/images/eclipse.png'),
+            Column(
+              children: <Widget>[
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: Container(
+                    height: 208,
+                    child: Image.asset('assets/images/eplipse.png'),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
