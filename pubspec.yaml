@@ -30,11 +30,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_multi_formatter: ^2.10.2
 
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
 cupertino_icons: ^0.1.2
+
 
 dev_dependencies:
   flutter_test:
@@ -59,6 +61,8 @@ flutter:
     - assets/images/uvix_icon.png
     - assets/images/yellow.png
     - assets/images/successful.png
+    - assets/images/irinaImg.png
+    - assets/images/beautyimg.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -82,4 +86,3 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
-
