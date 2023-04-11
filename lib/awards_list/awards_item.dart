@@ -8,7 +8,7 @@ Widget createItem(AwardModel model) {
       Row(
         children: <Widget>[
           Container(
-            padding: EdgeInsets.only(left: 4),
+            padding: EdgeInsets.all(16),
             height: 130,
             alignment: Alignment.centerLeft,
             child: Image(
@@ -17,17 +17,20 @@ Widget createItem(AwardModel model) {
           ),
           Column(
             children: <Widget>[Container(
-              width: 335,
-              padding: const EdgeInsets.only(left: 16, right: 16),
+              width: 300,
+              padding: const EdgeInsets.only( right: 16),
               alignment: Alignment.centerLeft,
               child: Text(
                 model.title,
                 style: const TextStyle(fontSize: 16),
               ),
             ),
-              Text(
-                model.author,
-                style: const TextStyle(fontSize: 16, color: Colors.grey),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  model.author,
+                  style: const TextStyle(fontSize: 16, color: Colors.grey),
+                ),
               ),],
           ),
 
