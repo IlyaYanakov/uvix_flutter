@@ -1,25 +1,42 @@
 import 'package:flutter/material.dart';
 
+import 'city_selection.dart';
+
 class PersonalAccountClientAndMaster extends StatefulWidget {
+  int type;
+
+  PersonalAccountClientAndMaster(this.type);
+
   @override
   State createState() {
-    return PersonalAccountClientAndMasterState();
+    return PersonalAccountClientAndMasterState(type);
   }
 }
 
 class PersonalAccountClientAndMasterState
     extends State<PersonalAccountClientAndMaster> {
+  int type;
 
-   Color _maleButton = Colors.white;
-   Color _femaleButtom = Colors.white;
-   void changeColorFemale(){
-     _femaleButtom = Colors.lightGreenAccent;
-     _maleButton = Colors.white;
-}
-   void changeColorMale(){
-     _maleButton = Colors.lightGreenAccent;
-     _femaleButtom = Colors.white;
-   }
+  PersonalAccountClientAndMasterState(this.type);
+
+  Color _maleButton = Colors.white;
+  Color _femaleButton = Colors.white;
+
+  void changeColorFemale() {
+    setState(() {
+      _femaleButton = Colors.lightGreenAccent;
+      _maleButton = Colors.white;
+    });
+
+  }
+
+  void changeColorMale() {
+    setState(() {
+      _maleButton = Colors.lightGreenAccent;
+      _femaleButton = Colors.white;
+    });
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -134,13 +151,18 @@ class PersonalAccountClientAndMasterState
                     height: 48,
                     child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                            backgroundColor: _maleButton),
+                            backgroundColor: _maleButton,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                        ),
                         onPressed: () {
-                         changeColorMale();
+                          changeColorMale();
                         },
+
                         child: const Text(
                           'Мужской',
-                          style: TextStyle(color: Colors.black),
+                          style: TextStyle(color: Colors.black,),
                         )),
                   ),
                 ),
@@ -149,8 +171,12 @@ class PersonalAccountClientAndMasterState
                   height: 48,
                   child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: _femaleButtom),
-                      onPressed: () {changeColorFemale();},
+                          backgroundColor: _femaleButton,
+                          shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),)),
+                      onPressed: () {
+                        changeColorFemale();
+                      },
                       child: const Text(
                         'Женский',
                         style: TextStyle(color: Colors.black),
@@ -164,9 +190,15 @@ class PersonalAccountClientAndMasterState
                   width: 160,
                   height: 40,
                   child: ElevatedButton(
-                      style:
-                          ElevatedButton.styleFrom(backgroundColor: Colors.black),
-                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.black),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    (CitySelection(type))));
+                      },
                       child: const Text('Далее'))),
             )
           ],
@@ -174,6 +206,4 @@ class PersonalAccountClientAndMasterState
       ),
     );
   }
-
 }
-

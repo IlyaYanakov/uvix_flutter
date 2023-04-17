@@ -1,15 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:uvix_flutter/regitsration/personal_data_salon.dart';
 
-import 'Personal_Account_Client_Master.dart';
+import 'personal_data_client_master.dart';
 
 class Promocode extends StatefulWidget {
+  int type;
+
+  Promocode(this.type);
+
   @override
   State createState() {
-    return PromocodeState();
+    return PromocodeState(type);
   }
 }
 
 class PromocodeState extends State<Promocode> {
+
+  int type;
+
+  PromocodeState(this.type);
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,7 +62,7 @@ class PromocodeState extends State<Promocode> {
                     child: const Text(
                       'Введите промокод',
                       style:
-                          TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+                      TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
                     )),
                 Container(
                   padding: const EdgeInsets.only(left: 16, right: 16, top: 16),
@@ -81,11 +92,7 @@ class PromocodeState extends State<Promocode> {
                   padding: const EdgeInsets.only(left: 32, bottom: 16),
                   child: TextButton(
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    (PersonalAccountClientAndMaster())));
+                        onPressed(type);
                       },
                       child: const Text(
                         'Пропустить',
@@ -99,11 +106,7 @@ class PromocodeState extends State<Promocode> {
                     height: 40,
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    (PersonalAccountClientAndMaster())));
+                        onPressed(type);
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.black,
@@ -122,4 +125,25 @@ class PromocodeState extends State<Promocode> {
       ),
     );
   }
+
+  void onPressed(int type) {
+    if (type == 1 ||type == 2) {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) =>
+              (PersonalAccountClientAndMaster(type))));
+    }
+
+    else if (type == 3) {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) =>
+              (PersonalAccountSalon(type))));
+
+
+    }
+  }
+
 }

@@ -5,13 +5,21 @@ import 'package:flutter_multi_formatter/formatters/phone_input_formatter.dart';
 import 'package:uvix_flutter/regitsration/Phone_Verification.dart';
 
 class EnterPhoneNumber extends StatefulWidget {
+  int type;
+
+  EnterPhoneNumber(this.type);
+
   @override
   State createState() {
-    return EnterPhoneNumberState();
+    return EnterPhoneNumberState(type);
   }
 }
 
 class EnterPhoneNumberState extends State<EnterPhoneNumber> {
+  int type;
+
+  EnterPhoneNumberState(this.type);
+
   TextEditingController textEditingController = TextEditingController();
 
   @override
@@ -86,9 +94,8 @@ class EnterPhoneNumberState extends State<EnterPhoneNumber> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => (
-                                  PhoneVerification(
-                                  textEditingController.text))));
+                              builder: (context) => (PhoneVerification(
+                                  type, textEditingController.text))));
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.black,

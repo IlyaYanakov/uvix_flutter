@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:uvix_flutter/awards_list/awards_repository.dart';
 
 import 'awards_item.dart';
 import 'awards_model.dart';
 
 class AwardsListScreen extends StatelessWidget {
+
   var items = [
     AwardModel(
         title: "Повышение квалификации “Массаж гуаша”",
@@ -15,7 +17,7 @@ class AwardsListScreen extends StatelessWidget {
         image: "assets/images/beautyimg.png"),
     AwardModel(
         title:
-            "Участие в конференции “Новейшие методики классического массажа, 2021”",
+        "Участие в конференции “Новейшие методики классического массажа, 2021”",
         author: "Марианна Матвеева",
         image: "assets/images/irinaImg.png"),
     AwardModel(
@@ -24,7 +26,7 @@ class AwardsListScreen extends StatelessWidget {
         image: "assets/images/beautyimg.png"),
   ];
 
-  AwardsListScreen({Key key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {

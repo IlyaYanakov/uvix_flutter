@@ -29,17 +29,10 @@ class MasterSalonScreen extends StatelessWidget {
                   child: Align(
                       child: Container(
                     alignment: Alignment.centerLeft,
-                    decoration: const BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('assets/images/yellow.png'),
-                      ),
+                      child: const Image(image: AssetImage('assets/images/uvix_icon.png')),
                     ),
-                    child: Row(children: const <Widget>[
-                      Image(image: AssetImage('assets/images/uvix_icon.png')),
-                    ]),
                   )),
                 ),
-              ),
               Container(
                   padding: const EdgeInsets.only(left: 16),
                   alignment: Alignment.topLeft,
@@ -86,7 +79,7 @@ class MasterSalonScreen extends StatelessWidget {
                 Align(
                   alignment: Alignment.centerRight,
                   child: Container(
-                    height: 208,
+                    height: 190,
                     child: Image.asset('assets/images/eplipse.png'),
                   ),
                 ),

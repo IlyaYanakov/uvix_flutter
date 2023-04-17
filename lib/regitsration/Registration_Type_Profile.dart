@@ -11,7 +11,9 @@ class TypeProfile extends StatefulWidget {
 }
 
 class TypeProfileState extends State<TypeProfile> {
-  String _displayText = 'Бронируйте запись к Вашим любимым мастерам в два клика,'
+  int type = 1;
+  String _displayText =
+      'Бронируйте запись к Вашим любимым мастерам в два клика,'
       ' выбирайте удобное для Вас время и находите мастеров '
       'в шаговой доступности.  Через приложение Вы всегда '
       'сможете найти подходящих'
@@ -21,23 +23,25 @@ class TypeProfileState extends State<TypeProfile> {
   Color _colorButton2 = Colors.white;
   Color _colorButton3 = Colors.white;
 
-
-
   void _onButton1Pressed() {
-    _displayText = 'Бронируйте запись к Вашим любимым мастерам в два клика,'
-            ' выбирайте удобное для Вас время и находите мастеров '
-            'в шаговой доступности.  Через приложение Вы всегда '
-        'сможете найти подходящих'
-            ' специалистов для ухода за Вашей внешностью и '
-            'воспользоваться множеством удобных функций бесплатно.';
-    _colorButton2 = Colors.white;
-    _colorButton3 = Colors.white;
-    _colorButton1 = Colors.lightGreenAccent;
+    setState(() {
+      _displayText = 'Бронируйте запись к Вашим любимым мастерам в два клика,'
+          ' выбирайте удобное для Вас время и находите мастеров '
+          'в шаговой доступности.  Через приложение Вы всегда '
+          'сможете найти подходящих'
+          ' специалистов для ухода за Вашей внешностью и '
+          'воспользоваться множеством удобных функций бесплатно.';
+      _colorButton2 = Colors.white;
+      _colorButton3 = Colors.white;
+      _colorButton1 = Colors.lightGreenAccent;
+      type = 1;
+    });
+
   }
+
   void _onButton2Pressed() {
     setState(() {
-      _displayText =
-      'Управляйте рабочим графиком, ведите учёт'
+      _displayText = 'Управляйте рабочим графиком, ведите учёт'
           ' финансов, настраивайте напоминания и привлекайте целевую аудиторию. '
           'Удобные функции приложения позволят бьюти-мастеру легко и '
           'быстро взаимодействовать с Клиентами, также '
@@ -48,11 +52,13 @@ class TypeProfileState extends State<TypeProfile> {
     _colorButton3 = Colors.white;
     _colorButton1 = Colors.white;
     _colorButton2 = Colors.lightGreenAccent;
+    type = 2;
   }
+
   void _onButton3Pressed() {
     setState(() {
       _displayText =
-      'Функции салона красоты реализованы для клиентоориентированного владельца'
+          'Функции салона красоты реализованы для клиентоориентированного владельца'
           ' бизнеса. В приложении  Вы сможете гибко и быстро администрировать '
           'рабочее пространство Ваших мастеров, взаимодействовать с Клиентами и '
           'привлекать целевую аудиторию. Присоединяйтесь и предоставьте '
@@ -62,6 +68,7 @@ class TypeProfileState extends State<TypeProfile> {
     _colorButton1 = Colors.white;
     _colorButton2 = Colors.white;
     _colorButton3 = Colors.lightGreenAccent;
+    type = 3;
   }
 
   @override
@@ -114,7 +121,7 @@ class TypeProfileState extends State<TypeProfile> {
                 ),
                 Padding(
                   padding:
-                  const EdgeInsets.only(right: 16.0, left: 16, top: 14),
+                      const EdgeInsets.only(right: 16.0, left: 16, top: 14),
                   child: SizedBox(
                     width: double.infinity,
                     height: 48,
@@ -123,15 +130,15 @@ class TypeProfileState extends State<TypeProfile> {
                             backgroundColor: _colorButton1,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(8))),
-                        onPressed: () {_onButton1Pressed();},
+                        onPressed: () {
+                          _onButton1Pressed();
+                        },
                         child: const Text(
                           'Клиент',
                           style: TextStyle(fontSize: 16, color: Colors.black),
                         )),
                   ),
                 ),
-
-
                 Padding(
                   padding:
                       const EdgeInsets.only(right: 16.0, left: 16, top: 14),
@@ -143,7 +150,9 @@ class TypeProfileState extends State<TypeProfile> {
                             backgroundColor: _colorButton2,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(8))),
-                        onPressed: () {_onButton2Pressed();},
+                        onPressed: () {
+                          _onButton2Pressed();
+                        },
                         child: const Text(
                           'Бьюти-мастер',
                           style: TextStyle(fontSize: 16, color: Colors.black),
@@ -161,7 +170,9 @@ class TypeProfileState extends State<TypeProfile> {
                             backgroundColor: _colorButton3,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(8))),
-                        onPressed: () {_onButton3Pressed();},
+                        onPressed: () {
+                          _onButton3Pressed();
+                        },
                         child: const Text(
                           'Салон красоты',
                           style: TextStyle(fontSize: 16, color: Colors.black),
@@ -171,8 +182,7 @@ class TypeProfileState extends State<TypeProfile> {
                 Container(
                   alignment: Alignment.bottomLeft,
                   width: 340,
-                  padding: const EdgeInsets.only( top: 16),
-
+                  padding: const EdgeInsets.only(top: 16),
                   child: Text(
                     _displayText,
                     style: const TextStyle(fontSize: 16),
@@ -190,7 +200,7 @@ class TypeProfileState extends State<TypeProfile> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => EnterPhoneNumber()));
+                              builder: (context) => EnterPhoneNumber(type)));
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.black,
@@ -210,7 +220,7 @@ class TypeProfileState extends State<TypeProfile> {
     );
   }
 
-  Widget item(String text, VoidCallback callback){
+  Widget item(String text, VoidCallback callback) {
     return SizedBox(
       width: double.infinity,
       height: 48,
@@ -226,6 +236,4 @@ class TypeProfileState extends State<TypeProfile> {
           )),
     );
   }
-
 }
-

@@ -4,9 +4,13 @@ import 'package:uvix_flutter/regitsration/Promocode.dart';
 import '../forgot_password/Forgot_Password_New_Password.dart';
 
 class PhoneVerification extends StatelessWidget {
+
+  int type;
   String _phoneNumber = '';
 
-  PhoneVerification(this._phoneNumber);
+  PhoneVerification(this.type,this._phoneNumber);
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -99,7 +103,7 @@ class PhoneVerification extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => (Promocode())));
+                                  builder: (context) => (Promocode(type))));
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.black,
@@ -125,4 +129,5 @@ class PhoneVerification extends StatelessWidget {
       ),
     );
   }
+
 }

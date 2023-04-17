@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../login_screen.dart';
+import '../login_and_registration/login_screen.dart';
 
 class ForgotPasswordSuccessful extends StatelessWidget {
   const ForgotPasswordSuccessful({Key key}) : super(key: key);
@@ -30,7 +30,7 @@ class ForgotPasswordSuccessful extends StatelessWidget {
               ),
 
                 const Padding(
-                  padding: EdgeInsets.all(16.0),
+                  padding: EdgeInsets.all(30.0),
                   child: Text(
                     'Вы можете продолжить использовать приложение',
                     style: TextStyle(fontWeight: FontWeight.w400, fontSize: 20),
@@ -47,7 +47,7 @@ class ForgotPasswordSuccessful extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
-                                  (const loginScreen())));
+                                  (const LoginScreen())));
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.black,

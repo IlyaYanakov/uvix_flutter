@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:uvix_flutter/login_screen.dart';
-import 'package:uvix_flutter/master_salon_screen.dart';
+import 'package:uvix_flutter/login_and_registration/login_screen.dart';
+import 'package:uvix_flutter/master_login/master_salon_screen.dart';
 import 'package:uvix_flutter/portfolio_list/portfolio_list_screen.dart';
 import 'package:uvix_flutter/services_list/services_list_screen.dart';
 
@@ -13,10 +13,10 @@ void main() {
 
 class myHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
 
         debugShowCheckedModeBanner: true,
-        home: MasterListScreen()
+        home: LoginScreen()
      );
   }
 }
